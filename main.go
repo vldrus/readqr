@@ -33,13 +33,13 @@ func main() {
 
 		data, err := os.ReadFile(path)
 		if err != nil {
-			fmt.Printf("%s: Cannot read file: %v", path, err)
+			fmt.Printf("%s: Cannot read file: %v\n", path, err)
 			continue
 		}
 
 		img, _, err := image.Decode(bytes.NewReader(data))
 		if err != nil {
-			fmt.Printf("%s: Cannot decode image: %v", path, err)
+			fmt.Printf("%s: Cannot decode image: %v\n", path, err)
 			continue
 		}
 
@@ -47,7 +47,7 @@ func main() {
 
 		res, err := qrcode.NewQRCodeReader().Decode(bmp, nil)
 		if err != nil {
-			fmt.Printf("%s: Cannot read QR Code from image: %v", path, err)
+			fmt.Printf("%s: Cannot read QR Code from image: %v\n", path, err)
 			continue
 		}
 
